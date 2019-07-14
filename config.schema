@@ -1,0 +1,112 @@
+{"type": "object",
+  "definitions": {
+  	"fit": {"type": "object",
+	         "$id": "#fit",
+	         "properties": {
+			     "type": {"type": "string",
+                           "enum": ["polyu","polyf","optic2","optic3"] },
+			     "coeffs": {"type": "array",
+				             "items": {"type": "object",
+							       "properties": {
+								        "name": {"type": "string"},
+										"value": {"anyOf": [{"type": "string"},{"type": "number"}] }
+								   },
+								   "required": ["name","value"]
+							 }
+				 },
+				 "enable": {"type": "string"},
+				 "comment": {"type": "string"}
+			 },
+			 "required": ["type","coeffs"]
+     },
+	 "validity": {"type": "array",
+	               "$id": "#validate",
+	               "items": {"type": "object",
+		             "properties": {
+					      "op": {"$ref": "#op"},
+						  "value": {"anyOf": [{"type": "string"},{"type": "number"}] },
+						  "enable": {"type": "string"},
+						  "comment": {"type": "string"}
+					 },
+					 "required": ["op", "value"]
+			     }
+	  },
+	  "op": {"type": "array",
+	          "$id": "#op",
+	          "enum": ["=", "==", "!=", "<>", "<", "<=", "=<", ">", ">=", "=>"] 
+	  }
+  },
+  "properties": {
+    "instrument": {"type": "string"},
+    "serial": {"type": "string"},
+    "frame_header": {"type": "string"},
+    "frame_type": {"type": "string",
+	                "enum": ["ascii", "binary","ASCII","BINARY"]
+	},
+    "frame_terminator": {"type": "string"},
+    "checksum": {"type": "array",
+                  "items": {"type": "object",
+				     "properties": {
+				        "name": {"type": "string"},
+					    "type": {"type": "string"},
+					    "enable": {"type": "string"},
+					    "comment": {"type": "string"}
+				     },
+				     "required": ["name", "type"]
+				 }
+    },
+    "constants": {"type": "array",
+                   "items": {"type": "object",
+				       "properties": {
+				          "name": {"type": "string"},
+					      "value": {"anyOf": [{"type": "string"},{"type": "number"}] },
+					      "report": {"type": "string"},
+					      "comment": {"type": "string"}
+				      },
+				      "required": ["name","value"]
+				 }
+    },
+    "frame_validity": {"type": "array",
+                        "items": {"type": "object",
+				           "properties": {
+			        		  "name": {"type": "string"},
+					          "op": {"$ref": "#op"},
+					          "value": {"anyOf": [{"type": "string"},{"type": "number"}] },
+					          "enable": {"type": "string"},
+					          "comment": {"type": "string"}
+    			            },
+					        "required": ["name","op","value"]
+						}
+    },
+    "duplicates": {"type": "array",
+                   "items": {"type": "object",
+				        "properties": {
+						    "name": {"type": "string"},
+							"of":  {"type": "string"},
+						    "fit": {"$ref": "#fit"},
+						    "validity": {"$ref": "#validity"},
+							"report": {"type": "string"},
+							"comment": {"type": "string"}
+						},
+						"required": ["name","of"]
+					}
+    },
+    "fields": {"type": "array",
+	            "items": {"type": "object",
+					  "properties": {
+						    "name": {"type": "string"},
+							"type":  {"type": "string"},
+							"delimiter": {"type": "string"},
+							"length": {"anyOf": [{"type": "string"},{"type": "number"}] },
+							"fit": {"$ref": "#fit"},
+						    "validity": {"$ref": "#validity"},
+							"report": {"type": "string"},
+							"comment": {"type": "string"}
+						},
+						"required": ["name","type"]
+				}
+    },
+	"comment": {"type": "string"}
+  },
+  "required": ["instrument", "serial", "frame_header", "frame_type", "fields"]
+}

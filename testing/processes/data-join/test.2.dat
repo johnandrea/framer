@@ -1,0 +1,20 @@
+{
+ "header info": {
+  "extracted by": "Framer",
+  "extractor version": "1.0",
+  "extracted on": "2019-04-25 12:00",
+  "data file": "../test.two.raw",
+  "operations": "framer",
+  "strings": {
+   "suna/256": []
+  }
+ },
+ "suna/256": {
+  "2019-04-05 13:02:01.97": {
+   "nitrate": "7"
+  },
+  "2019-04-05 13:02:04.104": {
+   "nitrate": "8"
+  }
+ }
+}

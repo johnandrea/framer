@@ -1,0 +1,28 @@
+{
+ "header info": {
+  "extracted by": "Framer",
+  "extractor version": "1.0",
+  "extracted on": "2019-04-25 17:51",
+  "data file": "../1ok-2wrongcheck-3badstatus-4badcheck.raw",
+  "operations": "framer",
+  "strings": {
+   "extra/3": ["a","b"],
+   "modem/183": ["status"]
+  }
+ },
+ "modem/183": {
+  "2019-04-05 12:02:01.97": {
+     "extra": "extra"
+   }
+ },
+ "suna/256": {
+  "2019-04-05 13:02:01.97": {
+     "extra": "extra"
+   }
+  },
+  "extra/3": {
+  "2019-04-05 15:00:00": {
+      "extra": "extra"
+    }
+  }
+}

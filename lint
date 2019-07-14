@@ -1,0 +1,52 @@
+#!/bin/bash
+
+clear
+
+#code=averager.py
+#code=check-config.py
+#code=check-package.py
+#code=fitter.py
+code=framer.py
+#code=reduce-selection.py
+#code=validator.py
+#code=viewer.py
+#code=lib/framer_config.py
+code=lib/framer_util.py
+
+
+disable=""
+disable="$disable bare-except"
+disable="$disable invalid-name"
+disable="$disable bad-whitespace"
+disable="$disable bad-indentation"
+disable="$disable missing-docstring"
+disable="$disable redefined-outer-name"
+disable="$disable line-too-long"
+disable="$disable wrong-import-position"
+disable="$disable wildcard-import"
+disable="$disable too-many-locals"
+disable="$disable multiple-statements"
+disable="$disable no-else-return"
+disable="$disable too-many-nested-blocks"
+disable="$disable too-many-branches"
+disable="$disable too-many-statements"
+disable="$disable too-many-lines"
+disable="$disable import-error"
+disable="$disable too-many-arguments"
+
+
+disable=$(echo $disable|tr -s ' '|tr ' ' ',')
+opts=""
+
+opts="$opts --disable=$disable"
+#opts="$opts init-hook=import sys; sys.path.append(\"lib\")"
+
+export PYTHONPATH="$PYTHONPATH;./lib"
+
+for name in *.py lib/*.py
+do
+   echo $name
+   /usr/local/python3/bin/pylint $opts $name 2>&1 |
+   grep -vi "your code has been" | grep -v "\-\-\-\-\-\-\-\-" |
+   grep -vi "\* Module" | grep -v "^$"
+done

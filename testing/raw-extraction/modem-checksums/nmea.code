@@ -1,0 +1,20 @@
+def is_nmea_checksum_ok( sentence ):
+    result = False
+
+    sentence = sentence.strip()
+
+    if sentence:
+       if '*' in sentence:
+          nmea_data,nmea_sum = sentence.split( '*', 1 )
+
+          if nmea_data and nmea_sum:
+             # must be a hex encoded integer
+             if all(c in '0123456789abcdef' for c in nmea_sum.lower()):
+
+                calculated = 0
+                for c in nmea_data:
+                    calculated ^= ord(c)
+
+                result = int( nmea_sum, 16 ) == calculated
+
+    return result

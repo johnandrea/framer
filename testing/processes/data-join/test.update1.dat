@@ -1,0 +1,22 @@
+{
+ "header info": {
+  "extracted by": "Framer",
+  "extractor version": "1.0",
+  "extracted on": "2019-04-25 17:51",
+  "data file": "../1ok-2wrongcheck-3badstatus-4badcheck.raw",
+  "operations": "framer",
+  "strings": {
+   "modem/183": []
+  }
+ },
+ "modem/183": {
+  "2019-04-05 12:02:01.97": {
+   "latpos": "4345.1111",
+   "lonpos": "replaced"
+  },
+  "2019-04-05 12:02:04.104": {
+   "latpos": "replaced",
+   "lonpos": "06959.3333"
+  }
+ }
+}

@@ -1,0 +1,12 @@
+The xml for some suna are missing the final 1 byte 'bu' status field.
+framer needs that field.
+
+Framer should use 'constants' to handle the seafet slope and offset.
+
+The xml converter doesn't use stdout. It writes new files itself.
+The names of the files go to stdout.
+
+The frame and field delimiters in xml don't always get converted
+properly. There is some bug which sometimes converts to "\\x0..."
+  The output conf should be checked by hand for proper
+\t, \r, \n or their unicode names.

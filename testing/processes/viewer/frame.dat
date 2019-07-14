@@ -1,0 +1,17 @@
+{
+ "header info": {
+  "extracted by": "Framer",
+  "extractor version": "1.0",
+  "extracted on": "2019-04-07 13:16",
+  "data file": "ocr.frame",
+  "operations": "framer"
+ },
+ "ocr507/41": {
+       "2019-04-03 04:04:02": { "address": 1161, "item1": 11 },
+       "2019-04-03 04:05:00": { "address": 1162, "item2": 21 }
+ },
+ "other/55": {
+       "2019-04-03 04:04:02": { "temp": 100, "beta": 200, "item3": 13 },
+       "2019-04-03 04:05:00": { "temp": 110, "item4": 23 }
+ }
+}
