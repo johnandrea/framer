@@ -26,3 +26,9 @@ obtained:
 	framer.py package.file data.file |
 	reduce-selection.py package.file |
 	data-stats.py
+
+The programs "check-config" and "check-package" are for checking the frame
+definition data configurations; they are not for use within data pipes.
+    The program "framer" is the start of a pipe stream. The programs "viewer",
+"data-ranges", and "data-stats" are the ends of a pipe stream. Otherwise the
+other programs act as pipe filters.
