@@ -16,3 +16,13 @@ piped together to handle the processing.
 	reduce-selection.py package.file |
 	averager.py |
 	viewer.py > results.tsv
+
+Without any processing (or at any step thereafter) stats on the data can be
+obtained:
+
+	framer.py package.file data.file |
+	data-ranges.py
+
+	framer.py package.file data.file |
+	reduce-selection.py package.file |
+	data-stats.py
