@@ -1,3 +1,9 @@
+These programs are for help in converting TDF and XML files to JSON frame
+configurations.
+   However they may not work in all cases and the output may need manual edits.
+
+XML files with SensorGroups with multiple Sensors are not handled corectly.
+
 The xml for some suna are missing the final 1 byte 'bu' status field.
 framer needs that field.
 
